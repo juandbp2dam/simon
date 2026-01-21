@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AppContext } from "../AppContext";
 import { useContext } from "react";
+import Inicio from "./Inicio";
 const Login = (props) => {
   const contexto = useContext(AppContext);
   const [nombreUsu, setNombreUsu] = useState("");
@@ -12,12 +13,10 @@ const Login = (props) => {
   };
   const envioForm = (event) => {
     event.preventDefault();
-    console.log(props.usuarios);
     // Aquí tengo que comprobar si el usuario está en la BD
     const usuarioLogin = props.usuarios.find((u) => u._nombre == nombreUsu);
-    console.log({ usuarioLogin });
     if (usuarioLogin) {
-      // Comprobampos si la contraseña es correcta
+      // Comprobamos si la contraseña es correcta
       if (usuarioLogin._clave != passUsu) {
         alert("La contraseña no es correcta");
       } else {
@@ -31,7 +30,6 @@ const Login = (props) => {
   };
   // Si el usuario ya está autenticado, mostrar su nombre
   // y si no, el formulario de entrada
-  console.log(contexto.nombreUsuario);
   if (!autenticado)
     return (
       <form onSubmit={envioForm}>
@@ -50,6 +48,7 @@ const Login = (props) => {
     return (
       <>
         <p>Está autenticado como {contexto.nombreUsuario}</p>
+        <Inicio></Inicio>
       </>
     );
 };

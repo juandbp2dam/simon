@@ -14,3 +14,5 @@ export class Jugada {
     this._acierto = acierto;
   }
 }
+
+

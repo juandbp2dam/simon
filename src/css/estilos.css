@@ -1,0 +1,21 @@
+.circulos {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.circulo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.botones {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: fit-content; /* Ancho ajustado al contenido */
+}
+.boton {
+  display: inline-block;
+  padding: 8px 12px;
+  line-height: 1;
+}
