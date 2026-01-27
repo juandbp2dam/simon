@@ -2,7 +2,9 @@ import { Usuario, Jugada } from "./DataObjects";
 import { AppContext } from "../AppContext";
 
 export let usuarios = [];
-let colores = ["red", "blue", "yellow", "green", "black"];
+export const colores = ["red", "blue", "yellow", "green", "black"];
+export const colores_esp = ["ROJO", "AZUL", "AMARILLO", "VERDE"];
+
 let jugadas = [];
 import "../css/estilos.css";
 import { useContext } from "react";
@@ -68,9 +70,9 @@ export const pintarCirculos = (col1, col2, col3, col4) => {
   } else {
     return (
       <div className="circulos">
-        {colores_arg.map((c) => (
+        {colores_arg.map((c, i) => (
           <div
-            key={c}
+            key={i}
             className="circulo"
             style={{ backgroundColor: c, border: "2px solid black" }}
           ></div>
@@ -78,14 +80,4 @@ export const pintarCirculos = (col1, col2, col3, col4) => {
       </div>
     );
   }
-  /*$colores_arg = [$col1, $col2, $col3, $col4];
-        if (!in_array($col1, $colores) || !in_array($col2, $colores) || !in_array($col3, $colores) || !in_array($col4, $colores))
-            echo "<br>Uno de los colores introducidos no es válido";
-        else{
-            echo "<div class='circulos'>";
-            foreach($colores_arg as $color){
-                echo "<div class='circulo' style='background-color: ".htmlspecialchars($color)."; border: 2px solid black;'></div>";
-            }
-            echo "</div>";
-      }*/
 };
