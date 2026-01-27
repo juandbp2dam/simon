@@ -1,13 +1,14 @@
 import { Usuario, Jugada } from "./DataObjects";
 import { AppContext } from "../AppContext";
+import "../css/estilos.css";
+import { useContext } from "react";
 
 export let usuarios = [];
 export const colores = ["red", "blue", "yellow", "green", "black"];
 export const colores_esp = ["ROJO", "AZUL", "AMARILLO", "VERDE"];
 
 let jugadas = [];
-import "../css/estilos.css";
-import { useContext } from "react";
+
 const getUsuariosFromLocal = () => {
   return JSON.parse(localStorage.getItem("Usuarios"));
 };

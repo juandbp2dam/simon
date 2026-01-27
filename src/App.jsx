@@ -8,7 +8,6 @@ import { AppContext, valoresDefecto } from "./AppContext";
 import Inicio from "./components/Inicio";
 import { useContext } from "react";
 function App() {
-  //const [count, setCount] = useState(0);
   const contexto = useContext(AppContext);
   const [autenticado, setAutenticado] = useState(false);
 
